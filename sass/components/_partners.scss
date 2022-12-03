@@ -1,0 +1,32 @@
+.partners__item.card-set__item {
+  @include card-set-item(2);
+  min-height: 92px;
+
+  @media screen and(min-width:768px) {
+    @include card-set-item(3);
+  }
+  @media screen and(min-width:1200px) {
+    @include card-set-item(6);
+  }
+}
+
+
+.partners__link {
+  @include alignment(center, center);
+  width: 100%;
+  height: 100%;
+  color: var(--icons-color);
+  border: 1px solid var(--icons-color);
+  border-radius: 4px;
+
+  @include transition(color, border);
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--active-color);
+    color: var(--active-color);
+  }
+}
+.partners__icons {
+  fill: currentColor;
+}

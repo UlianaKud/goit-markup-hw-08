@@ -1,0 +1,49 @@
+// LOGO
+%logo {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: calc(28 / 24);
+  color: var(--active-color);
+  text-decoration: var(--text-decoration);
+
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+    font-size: 26px;
+    line-height: calc(31 / 26);
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+    font-size: 26px;
+    line-height: calc(31 / 26);
+  }
+}
+
+// SECTION TITLE
+  %header-link {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+%header-font-style {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.02em;
+}
+
+// SOCIAL ICONS
+%icons-item-size {
+  height: 44px;
+  width: 44px;
+}
+%icons-link-size {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}

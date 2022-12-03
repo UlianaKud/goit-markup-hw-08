@@ -1,0 +1,32 @@
+.advantages__icon {
+  @include alignment(center, center);
+  height: 120px;
+  width: 100%;
+  background-color: var(--filter-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.advantages__header {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+
+  @media screen and(min-width:768px) {
+    text-align: start;
+  }
+}
+.advantages__paragraf {
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  color: var(--paragraf-color);
+}
+.advantages__item.card-set__item {
+  @media screen and(min-width:768px) {
+    @include card-set-item(2);
+  }
+  @media screen and(min-width:1200px) {
+    @include card-set-item(4);
+  }
+}

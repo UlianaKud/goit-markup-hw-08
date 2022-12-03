@@ -1,0 +1,8 @@
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--card-set-gap);
+  }
+  .card-set__item {
+  @include card-set-item();
+  }

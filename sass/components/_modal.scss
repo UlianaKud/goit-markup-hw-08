@@ -1,0 +1,202 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  @include transition(opacity);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  padding: 40px;
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  @include transition(transform);
+}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  @include alignment;
+  padding: 0;
+
+  width: 30px;
+  height: 30px;
+
+  color: #000;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+
+  @include transition(color);
+
+  &:hover,
+  &:focus {
+    color: var(--active-color);
+  }
+}
+.modal-close__icon {
+  fill: currentColor;
+}
+
+.modal-form__header {
+  display: block;
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  color: var(--title-color);
+}
+.modal-form__group {
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal-form__label {
+  display: block;
+  text-align: start;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+
+  color: var(--paragraf-color);
+}
+.modal-form__input {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  padding-left: 45px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: 1px solid transparent;
+  border-radius: 4px;
+
+  @include transition(outline-color, border-color);
+
+  &:focus {
+    outline-color: var(--active-color);
+    border-color: var(--active-color);
+  }
+}
+.modal-form__input:focus + .modal-form__icon {
+  fill: var(--active-color);
+}
+.modal-form__icon {
+  fill: currentColor;
+  position: absolute;
+  top: 29px;
+  left: 15px;
+}
+.textarea-group {
+  margin-bottom: 20px;
+}
+.textarea-group__feedback {
+  min-height: 120px;
+  padding: 12px 16px;
+  width: 100%;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: 1px solid transparent;
+  border-radius: 4px;
+
+  @include transition(outline-color, border-color);
+
+  &::placeholder {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+  &:focus {
+    outline-color: var(--active-color);
+    border-color: var(--active-color);
+  }
+}
+
+.checkbox {
+  @include alignment(center, center);
+  margin-bottom: 30px;
+}
+.checkbox__input {
+  appearance: none;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-color);
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0px;
+
+  @include transition(background-color, border-color, background-size);
+
+  &:checked {
+    background-color: var(--active-color);
+    border-color: var(--active-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E%0A");
+    background-size: 11px 8px;
+  }
+}
+
+.checkbox__text {
+  user-select: none;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  color: var(--paragraf-color);
+}
+.checkbox__link {
+  color: var(--active-color);
+  text-underline-offset: 4px;
+}
+.modal-button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 52px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+  background-color: var(--active-color);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+
+  @include transition(background-color);
+
+  &:focus,
+  &:hover {
+    background-color: var(--active-button);
+  }
+}
