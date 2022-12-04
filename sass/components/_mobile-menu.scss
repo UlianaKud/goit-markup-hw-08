@@ -2,7 +2,7 @@ body {
   position: relative;
 }
 .menu {
-  position: absolute;
+  position: fixed;
   padding: 21px 25px 48px 40px;
   top: 0;
   left: 0;
@@ -10,6 +10,12 @@ body {
   height: 796px;
 
   background-color: var(--white-color);
+
+  transform: translateX(0);
+  @include transition(transform);
+}
+.menu.is-open{
+  transform: translateX(100%);
 }
 .button-close {
   @include alignment(center, center);
@@ -35,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-bottom: 306px;
 }
 .menu__item {
   font-weight: 500;
@@ -43,10 +50,42 @@ body {
   letter-spacing: 0.02em;
 
   color: var(--title-color);
-  @include transition(color);
+}
+.menu__item.current{
+  color: var(--active-color);
+}
+.contact-menu {
+  @include alignment();
+  flex-direction: column;
+}
+.contact-menu__tel {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: var(--active-color);
+}
+.contact-menu__mail {
+  margin-bottom: 64px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: var(--paragraf-color);
+}
+.social-menu__item {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: var(--active-color);
 
-  &:hover,
-  &:focus {
-    color: var(--active-color);
+  &:not(:last-child)::after {
+    content:"";
+    width: 22px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }

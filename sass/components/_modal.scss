@@ -26,8 +26,8 @@
   transform: translate(-50%, -50%) scale(1);
   padding: 40px;
 
-  min-width: 528px;
-  min-height: 581px;
+  min-width: 450px;
+  min-height: 609px;
 
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -35,12 +35,17 @@
   border-radius: 4px;
 
   @include transition(transform);
+
+  @media screen and(min-width:1200px) {
+    min-width: 528px;
+    min-height: 581px;
+  }
 }
 .modal-close {
   position: absolute;
   top: 8px;
   right: 8px;
-  @include alignment;
+  @include alignment(center, center);
   padding: 0;
 
   width: 30px;
@@ -68,8 +73,12 @@
   text-align: center;
   margin-bottom: 12px;
   font-size: 20px;
-  line-height: calc(23 / 20);
+  line-height: calc(30 / 20);
   color: var(--title-color);
+
+  @media screen and(min-width:1200px) {
+    line-height: calc(23 / 20);
+  }
 }
 .modal-form__group {
   margin-bottom: 10px;
@@ -128,10 +137,14 @@
   @include transition(outline-color, border-color);
 
   &::placeholder {
-    font-size: 12px;
-    line-height: calc(14 / 12);
+    font-size: 14px;
+    line-height: calc(16 / 14);
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
+    @media screen and(min-width:1200px) {
+      font-size: 12px;
+      line-height: calc(14 / 12);
+    }
   }
   &:focus {
     outline-color: var(--active-color);
@@ -168,9 +181,13 @@
 
 .checkbox__text {
   user-select: none;
-  font-size: 14px;
-  line-height: calc(24 / 14);
+  font-size: 12px;
+  line-height: calc(14 / 12);
   color: var(--paragraf-color);
+  @media screen and(min-width:1200px) {
+    font-size: 14px;
+  line-height: calc(24 / 14);
+  }
 }
 .checkbox__link {
   color: var(--active-color);
