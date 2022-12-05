@@ -1,5 +1,10 @@
-.portfolio-item {
-  --card-set-column: 3;
+.portfolio-item.card-set__item {
+  @media screen and(min-width:768px) {
+    @include card-set-item(2);
+  }
+  @media screen and(min-width:1200px) {
+    @include card-set-item(3);
+  }
 }
 .portfolio-link {
   @include alignment;

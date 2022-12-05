@@ -1,11 +1,20 @@
 .filter-list {
-  margin-bottom: 50px;
-  @include alignment(stretch, center);
+  margin-bottom: 40px;
+  @include alignment();
+  flex-wrap: wrap;
   gap: 8px;
+
+  @media screen and(min-width:768px) {
+    margin-bottom: 30px;
+    @include alignment(stretch, center);
+  }
+  @media screen and(min-width:1200px) {
+    margin-bottom: 50px;
+  }
 }
 .filter__button {
   @include alignment(center, center);
-  min-width: 73px;
+  min-width: 67px;
   padding: 6px 22px;
   font-family: inherit;
   font-weight: 500;
