@@ -82,6 +82,11 @@ body {
   letter-spacing: 0.02em;
   color: var(--paragraf-color);
 }
+.social-menu{
+  @include alignment();
+  flex-wrap: wrap;
+  gap:10px;
+}
 .social-menu__item {
   font-weight: 500;
   font-size: 18px;
@@ -93,7 +98,7 @@ body {
     content: "";
     width: 22px;
     border: 1px solid rgba(33, 33, 33, 0.2);
-    margin-right: 10px;
+    // margin-right: 10px;
     margin-left: 10px;
   }
 }
